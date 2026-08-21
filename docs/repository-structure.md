@@ -7,6 +7,7 @@
 ```text
 ai-prompt-library/
 ├─ README.md
+├─ LICENSE
 ├─ prompts/
 │  ├─ README.md
 │  └─ <category>/
@@ -42,6 +43,14 @@ prompts/writing/rewrite-assistant.md
 ### `docs/`
 
 命名規則、運用ルール、将来的な公開方法など、プロンプト本文ではない説明文書を置きます。
+
+### `LICENSE`
+
+リポジトリ全体の既定ライセンスを定義します。
+
+個別ファイルに別条件が明記されていない限り、このリポジトリの公開内容には CC0 1.0 Universal を適用します。
+
+第三者が権利を有する商標、外部データ、引用物などの権利は、このライセンス適用によって放棄されるものではありません。
 
 ## 命名規則
 
