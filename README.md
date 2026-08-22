@@ -11,6 +11,11 @@ ChatGPTやその他のAIツールで再利用できる、日本語中心の公�
 - [週次グローバル市場モニター](prompts/market-analysis/weekly-global-market-monitor.md)  
   世界の主要株式4地域とVIX、米10年金利、DXY、HYG、金、原油を横断し、市場レジーム、急変リスク、Compression、レジーム転換、Cycle、地域順位を週次評価します。Exact Quantが利用できない場合も、定義済みRobust Fallbackでレポートを完成させる設計です。
 
+### 食・飲料
+
+- [ボトル・ラベルから楽しむ酒類ガイド](prompts/food-drink/bottle-label-drink-guide.md)  
+  ワイン、日本酒、ウイスキー、焼酎のボトルやラベル画像から商品を識別し、酒類別の星評価、初心者向け解説、料理との相性、飲み方、条件を満たす場合は雑誌風の商品紹介画像まで生成するプロンプトです。
+
 すべてのプロンプトは [プロンプト一覧](prompts/README.md) から確認できます。
 
 ## 使い方
