@@ -61,19 +61,19 @@ japanese-company-fundamental-analyzer/
 └─ prompt-review-checklist.md
 ```
 
-### `project-instructions.md` — 必須
+### [`project-instructions.md`](project-instructions.md) — 必須
 
-ChatGPT Projectの **Project Instructions** に貼り付けます。
+ChatGPT Projectの **Project Instructions** に全文を貼り付けます。
 
 常時守る役割、目的、根拠ルール、検索方針、詳細モード、質問条件、停止条件を定義します。
 
-### `report-templates.md` — 推奨
+### [`report-templates.md`](report-templates.md) — 推奨
 
 **Project Files** に追加します。
 
 簡易要約、詳細モード1〜3、DCF、同業比較、複合指定などの出力・分析テンプレートです。
 
-### `prompt-review-checklist.md` — 任意・開発者向け
+### [`prompt-review-checklist.md`](prompt-review-checklist.md) — 任意・開発者向け
 
 通常の企業分析では不要です。
 
@@ -84,15 +84,15 @@ ChatGPT Projectの **Project Instructions** に貼り付けます。
 ### Recommended
 
 1. ChatGPTで新しいProjectを作成する
-2. `project-instructions.md` の本文をProject Instructionsへ貼る
-3. `report-templates.md` をProject Filesへ追加する
+2. [`project-instructions.md`](project-instructions.md) の全文をProject Instructionsへ貼る
+3. [`report-templates.md`](report-templates.md) をProject Filesへ追加する
 4. Web検索を利用できる状態にする
 5. DCFや詳細計算を使う場合はデータ分析を利用できる状態にする
 6. 企業名または銘柄コードを入力する
 
 ### Developer / Maintainer
 
-上記に加えて `prompt-review-checklist.md` をProject Filesへ追加します。
+上記に加えて [`prompt-review-checklist.md`](prompt-review-checklist.md) をProject Filesへ追加します。
 
 ## 動作フロー
 

@@ -88,6 +88,7 @@ Project Package用テンプレートは、同形式のパッケージが複数�
 
 - `market-analysis`
 - `weekly-global-market-monitor.md`
+- `fact-check.md`
 - `japanese-company-fundamental-analyzer`
 
 表示タイトルと本文は日本語で構いません。
