@@ -11,7 +11,11 @@ ai-prompt-library/
 ├─ prompts/
 │  ├─ README.md
 │  └─ <category>/
-│     └─ <prompt-name>.md
+│     ├─ <prompt-name>.md
+│     └─ <project-package>/
+│        ├─ README.md
+│        ├─ project-instructions.md
+│        └─ <support-files>.md
 ├─ templates/
 │  └─ prompt-template.md
 └─ docs/
@@ -24,7 +28,7 @@ ai-prompt-library/
 
 公開プロンプトの正本を置きます。
 
-プロンプトは用途別カテゴリに分け、1プロンプト1ファイルを原則とします。
+通常は用途別カテゴリに分け、1プロンプト1ファイルを原則とします。
 
 例：
 
@@ -36,9 +40,33 @@ prompts/writing/rewrite-assistant.md
 
 実際にプロンプトが追加された時点でカテゴリを作成し、将来用途のためだけの空カテゴリは作りません。
 
+### Project Package
+
+ChatGPT Projectなどで、**Instructionsと補助ファイルを分離することが実行品質、理解しやすさ、保守性を実際に改善する場合**は、1プロンプト1ファイルの例外としてProject Packageを使用できます。
+
+```text
+prompts/<category>/<package-name>/
+├─ README.md
+├─ project-instructions.md
+└─ <support-files>.md
+```
+
+ルール：
+
+- `README.md` を公開入口とする
+- `project-instructions.md` を中核の実行指示とする
+- 補助ファイルは、テンプレート、評価・レビュー、参照資料など実際に必要なものだけ置く
+- READMEで各ファイルを「必須」「推奨」「任意」に分類する
+- 同じルールを複数ファイルへ無用に重複させない
+- 補助ファイルがなくても中核機能が成立することが望ましい
+- 単一ファイルで同等品質を維持できる場合はProject Packageを作らない
+- パッケージ全体のversion / last_updatedはREADMEのfront matterを正本とする
+
 ### `templates/`
 
-新しいプロンプトを追加するときの共通雛形を置きます。
+新しい単一プロンプトを追加するときの共通雛形を置きます。
+
+Project Package用テンプレートは、同形式のパッケージが複数必要になった時点で追加を検討します。最初の1件だけを理由に空の共通構造を先回りして増やしません。
 
 ### `docs/`
 
@@ -60,13 +88,13 @@ prompts/writing/rewrite-assistant.md
 
 - `market-analysis`
 - `weekly-global-market-monitor.md`
-- `fact-check.md`
+- `japanese-company-fundamental-analyzer`
 
 表示タイトルと本文は日本語で構いません。
 
 ## プロンプトファイルの基本項目
 
-各プロンプトは原則として次を持ちます。
+単一プロンプトは原則として次を持ちます。
 
 1. YAML front matter
    - `title`
@@ -82,9 +110,11 @@ prompts/writing/rewrite-assistant.md
 5. プロンプト本文
 6. 更新履歴
 
+Project Packageでは、パッケージの `README.md` に同等のmetadata、概要、必要機能、セットアップ、更新履歴を持たせます。
+
 ## バージョン管理
 
-意味のある変更があった場合は、プロンプト単位でバージョンを更新します。
+意味のある変更があった場合は、プロンプト単位またはProject Package単位でバージョンを更新します。
 
 - 誤字修正・説明文のみ：PATCH
 - 判定条件・出力形式など互換性を維持した改善：MINOR
@@ -96,7 +126,9 @@ prompts/writing/rewrite-assistant.md
 
 ルート `README.md` は公開入口、`prompts/README.md` はプロンプト索引として使用します。
 
-プロンプトを追加した場合は `prompts/README.md` にリンクを追加し、代表的なものはルート `README.md` にも掲載します。
+単一プロンプトを追加した場合は `prompts/README.md` にリンクを追加し、代表的なものはルート `README.md` にも掲載します。
+
+Project Packageはパッケージ内 `README.md` へリンクします。
 
 ## 将来の拡張
 

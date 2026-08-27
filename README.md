@@ -6,6 +6,11 @@ ChatGPTやその他のAIツールで再利用できる、日本語中心の公�
 
 ## Prompts
 
+### 個別株・企業分析
+
+- [日本株 企業業績・ファンダメンタル分析 — ChatGPT Project Package](prompts/equity-analysis/japanese-company-fundamental-analyzer/README.md)  
+  日本の上場企業を、過去・現在・将来の順に調査し、KPI・セグメント、シナリオ・バリュエーション、最新開示・経営方針の3方向から段階的に分析するChatGPT Project向けパッケージです。
+
 ### 市場分析
 
 - [週次グローバル市場モニター](prompts/market-analysis/weekly-global-market-monitor.md)  
@@ -20,10 +25,18 @@ ChatGPTやその他のAIツールで再利用できる、日本語中心の公�
 
 ## 使い方
 
+### 単一プロンプト
+
 1. 使用したいプロンプトのMarkdownファイルを開く
 2. `プロンプト本文` 以降をコピーする
 3. 対応するAIへ貼り付ける
 4. 必要に応じて定期実行や追加条件を設定する
+
+### Project Package
+
+複数ファイルで構成されるProject Packageは、各パッケージの `README.md` を入口にします。
+
+`project-instructions.md` をChatGPT ProjectのProject Instructionsへ貼り、READMEで「推奨」とされている補助ファイルをProject Filesへ追加してください。
 
 各プロンプトには必要な機能や前提条件を記載しています。Web検索、市場データ、ファイル参照、高度計算などが必要なものは、利用環境によって結果が変わる場合があります。
 
@@ -36,7 +49,11 @@ ai-prompt-library/
 ├─ prompts/
 │  ├─ README.md
 │  └─ <category>/
-│     └─ <prompt-name>.md
+│     ├─ <prompt-name>.md
+│     └─ <project-package>/
+│        ├─ README.md
+│        ├─ project-instructions.md
+│        └─ <support-files>.md
 ├─ templates/
 │  └─ prompt-template.md
 └─ docs/
@@ -47,11 +64,12 @@ ai-prompt-library/
 
 ## 新しいプロンプトの追加
 
-新規プロンプトは [共通テンプレート](templates/prompt-template.md) を基準に作成します。
+単一プロンプトは [共通テンプレート](templates/prompt-template.md) を基準に作成します。
 
 原則として、
 
-- 1プロンプト1ファイル
+- 単一プロンプトは1プロンプト1ファイル
+- 複数ファイルが実行品質や保守性を実際に改善する場合だけProject Packageを使用
 - 用途別カテゴリで整理
 - 英小文字 `kebab-case` のパス
 - 本文は日本語可
@@ -65,8 +83,9 @@ ai-prompt-library/
 - AI固有機能への依存がある場合は明示する
 - 長大なプロンプトでも、目的・前提・Fallback・停止条件を明確にする
 - 既存プロンプトの意味を変更するときはバージョンを更新する
+- Project Packageでも同じ指示を複数ファイルへ無用に重複させない
 
-このリポジトリは今後、実際に公開するプロンプトが増えた時点でカテゴリを追加していきます。
+このリポジトリは今後、実際に公開するプロンプトが増えた時点でカテゴリや補助構造を追加していきます。
 
 ## ライセンス
 
