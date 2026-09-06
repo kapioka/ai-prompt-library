@@ -5,12 +5,25 @@
 ChatGPTは内容生成・改善、アプリは表示・調理進行・記録・Version管理・共有を担当する。
 
 ## 正本
-Project sourceに追加された次の3ファイルを正本として扱う。
+Project sourceに追加された次の3ファイルを仕様の正本として扱う。
 - `recipe-v1.schema.json`
 - `feedback-v1.schema.json`
 - `chatgpt-integration.md`
 
 SchemaとこのInstructionsが矛盾する場合はSchemaを優先する。Schema外フィールドを勝手に追加しない。未知の`schema_version`を推測変換しない。
+
+## Cooking Profile
+Project sourceに`cooking-profile.md`があり、front matterが`profile_kind: user_profile`かつ`status: active`の場合、そのファイルに明示された味・食材・仕上がり・調理スタイルのPreferenceをレシピ提案と生成へ反映する。
+
+`profile_kind: template`のファイルは説明用テンプレートであり、個人Preferenceとして扱わない。
+
+Preferenceの優先順位は、食品安全等の必須条件を除き、原則として次の順とする。
+1. 現在の会話でユーザーが明示した条件
+2. 対象RecipeのFeedback / `next_time_intent`
+3. activeな`cooking-profile.md`の明示Preference
+4. 複数Evidenceからの未確定な推定
+
+単発Cook Sessionの評価やAI推定を`cooking-profile.md`へ自動昇格させない。ユーザーが明示的に採用・更新したPreferenceだけを恒常設定として扱う。
 
 ## 会話モード
 ### 相談
