@@ -4,7 +4,7 @@ slug: recipe-cooking-navigator
 category: food-drink
 language: ja
 status: active
-version: 1.1.0
+version: 1.1.1
 last_updated: 2026-09-06
 ---
 
@@ -15,6 +15,15 @@ last_updated: 2026-09-06
 料理相談から完成Recipeの生成、Recipe Cooking NavigatorアプリへのRecipe JSON受け渡し、調理後Feedback JSONからのRevision生成までを1つのChatGPT Projectで扱うためのProject Package。
 
 ChatGPTはレシピ内容の生成・改善を担当し、アプリは表示、調理進行、記録、Version管理、共有を担当する。
+
+## 対応アプリ
+
+- [Recipe Cooking Navigatorアプリ](https://github.com/kapioka/recipe-cooking-navigator)
+- [実装状況とロードマップ](https://github.com/kapioka/recipe-cooking-navigator/blob/main/docs/roadmap.md)
+
+Android初期版では、このPackageが生成したRecipe JSONをファイルから取り込み、レシピ確認、Cooking mode、音声操作・読み上げ、タイマー、中断・再開、調理完了まで利用できる。
+
+調理後のEvaluation入力、Feedback JSON生成・共有、`active` Revision切り替え、過去Versionからの改善ループはアプリの今後のバージョンで対応予定。Package側はその将来連携用のFeedback契約も先行して含む。
 
 ## 想定用途
 
@@ -55,17 +64,17 @@ ChatGPTはレシピ内容の生成・改善を担当し、アプリは表示、�
 
 Schema / 連携仕様の3ファイルは、ChatGPT Projectへそのまま追加しやすくするための**配布用コピー**であり、仕様の正本ではない。
 
-正本は `kapioka/recipe-cooking-navigator` に置く。
+正本は [kapioka/recipe-cooking-navigator](https://github.com/kapioka/recipe-cooking-navigator) に置く。
 
 | このPackage内の配布用コピー | 正本 |
 |---|---|
-| `recipe-v1.schema.json` | `kapioka/recipe-cooking-navigator/schemas/recipe-v1.schema.json` |
-| `feedback-v1.schema.json` | `kapioka/recipe-cooking-navigator/schemas/feedback-v1.schema.json` |
-| `chatgpt-integration.md` | `kapioka/recipe-cooking-navigator/docs/chatgpt-integration.md` |
+| `recipe-v1.schema.json` | [`schemas/recipe-v1.schema.json`](https://github.com/kapioka/recipe-cooking-navigator/blob/main/schemas/recipe-v1.schema.json) |
+| `feedback-v1.schema.json` | [`schemas/feedback-v1.schema.json`](https://github.com/kapioka/recipe-cooking-navigator/blob/main/schemas/feedback-v1.schema.json) |
+| `chatgpt-integration.md` | [`docs/chatgpt-integration.md`](https://github.com/kapioka/recipe-cooking-navigator/blob/main/docs/chatgpt-integration.md) |
 
 `cooking-profile.md`はSchema正本のコピーではなく、利用者ごとの個人設定テンプレートである。公開リポジトリへ個人の実Profileを保存することは前提にしない。
 
-2026-09-06時点ではSchema / 連携仕様の正本候補は `recipe-cooking-navigator` の `feat/initial-spec` branchに存在する。アプリ側でmainへ統合された後はmainを正本として優先する。
+公開済み仕様は`recipe-cooking-navigator`の`main`を正本とし、開発中の変更はPull Request上で確認する。
 
 Schemaや連携仕様を変更するときは、まず `recipe-cooking-navigator` 側を更新し、このPackageの配布用コピーを追従させる。このPackage側から独自にSchemaの意味を変更しない。
 
@@ -80,8 +89,8 @@ Schemaや連携仕様を変更するときは、まず `recipe-cooking-navigator
 7. 個人の好みを反映する場合は [`cooking-profile.md`](cooking-profile.md) を自分用に編集し、Project sourceへ追加する。
 8. 料理候補の相談は通常会話で行う。
 9. 「レシピお願い」「これで作る」「アプリに送る」等で最終Recipe JSONを生成する。
-10. Android MVPでは共有またはファイル経由でアプリへ渡す。
-11. 調理後はアプリからFeedback JSONをChatGPTへ共有し、新Revisionを受け取る。
+10. Android初期版ではRecipe JSONをファイルとして保存し、アプリの「ChatGPTレシピを取り込む」から選択する。Android Sharesheet受信は今後対応予定。
+11. Feedback連携対応後は、調理後にアプリからFeedback JSONをChatGPTへ共有し、新Revisionを受け取る。
 
 ## Preferenceの扱い
 
@@ -108,6 +117,12 @@ Feedback v1には改善対象snapshotのrevisionは含まれるが、アプリ�
 そのため過去Versionから枝分かれ改善する場合、ChatGPTが現在の最大revisionをProject contextから把握できなければ、暫定的に `parent_revision + 1` を使用する。将来、Revision衝突を完全に避けるにはFeedback契約またはアプリ側採番責務の明確化を検討する。
 
 ## 更新履歴
+
+### 1.1.1 — 2026-09-06
+
+- 対応するRecipe Cooking Navigatorアプリへのリンクを追加。
+- Android初期版で現在使える範囲と、Feedback連携が今後の実装であることを明示。
+- Schema・連携仕様のSource of Truthを直接開けるリンクへ更新。
 
 ### 1.1.0 — 2026-09-06
 
