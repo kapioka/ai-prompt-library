@@ -16,6 +16,9 @@
 
 ### 食・飲料
 
+- [Recipe Cooking Navigator — ChatGPT Project Package](food-drink/recipe-cooking-navigator/README.md)  
+  料理相談、完成Recipe JSON生成、アプリへの取り込み、調理後Feedback JSONからのRevision生成を一貫して扱うChatGPT Project向けパッケージ。
+
 - [ボトル・ラベルから楽しむ酒類ガイド](food-drink/bottle-label-drink-guide.md)  
   ワイン、日本酒、ウイスキー、焼酎のボトルやラベル画像から商品を識別し、酒類別の星評価、初心者向け解説、料理との相性、飲み方、条件を満たす場合は雑誌風の商品紹介画像まで生成するプロンプト。
 
