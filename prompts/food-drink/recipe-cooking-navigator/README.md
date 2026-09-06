@@ -4,7 +4,7 @@ slug: recipe-cooking-navigator
 category: food-drink
 language: ja
 status: active
-version: 1.0.0
+version: 1.0.1
 last_updated: 2026-09-06
 ---
 
@@ -32,23 +32,24 @@ ChatGPTはレシピ内容の生成・改善を担当し、アプリは表示、�
 
 ### 推奨Project source
 
-Recipe / Feedback Schemaの正本は `kapioka/recipe-cooking-navigator` に置く。
+Recipe / Feedback SchemaとChatGPT連携仕様の正本は `kapioka/recipe-cooking-navigator` に置く。
 
-現在のSchema v1:
+Project sourceとして次の3ファイルを追加することを推奨する。
 
 - `schemas/recipe-v1.schema.json`
 - `schemas/feedback-v1.schema.json`
+- `docs/chatgpt-integration.md`
 
 2026-09-06時点では上記仕様は `feat/initial-spec` branchに存在する。アプリ側でmainへ統合された後はmainを優先する。
 
-ChatGPT ProjectへSchemaファイルをProject sourceとして追加すると、Instructions内の要約契約だけに依存せずSchema適合性を確認しやすい。
+Project Instructionsは実行方針だけに圧縮し、厳密なfield定義はSchema、詳細な往復契約は`chatgpt-integration.md`へ分離する。
 
 ## セットアップ
 
 1. ChatGPTで新規Projectを作成する。
 2. Project名は例として `レシピ・Cooking Navigator` とする。
 3. `project-instructions.md` の本文をProject Instructionsへ設定する。
-4. 推奨としてRecipe / Feedback Schema v1をProject sourceへ追加する。
+4. 上記3ファイルをProject sourceへ追加する。
 5. 料理候補の相談は通常会話で行う。
 6. 「レシピお願い」「これで作る」「アプリに送る」等で最終Recipe JSONを生成する。
 7. Android MVPでは共有またはファイル経由でアプリへ渡す。
@@ -56,7 +57,7 @@ ChatGPT ProjectへSchemaファイルをProject sourceとして追加すると、
 
 ## Source of Truth
 
-- Prompt / Project Instructions: このProject Package
+- 再利用可能なPrompt: このProject Package
 - Recipe / Feedback Schema: `kapioka/recipe-cooking-navigator`
 - アプリ連携・製品仕様: `kapioka/recipe-cooking-navigator/docs/`
 
@@ -69,6 +70,11 @@ Feedback v1には改善対象snapshotのrevisionは含まれるが、アプリ�
 そのため過去Versionから枝分かれ改善する場合、ChatGPTが現在の最大revisionをProject contextから把握できなければ、暫定的に `parent_revision + 1` を使用する。将来、Revision衝突を完全に避けるにはFeedback契約またはアプリ側採番責務の明確化を検討する。
 
 ## 更新履歴
+
+### 1.0.1 — 2026-09-06
+
+- Project Instructionsを短い実行指示へ圧縮。
+- Recipe / Feedback Schemaと`chatgpt-integration.md`をProject sourceとして分離する構成へ整理。
 
 ### 1.0.0 — 2026-09-06
 
