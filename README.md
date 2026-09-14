@@ -16,6 +16,11 @@ ChatGPTやその他のAIツールで再利用できる、日本語中心の公�
 - [週次グローバル市場モニター](prompts/market-analysis/weekly-global-market-monitor.md)  
   世界の主要株式4地域とVIX、米10年金利、DXY、HYG、金、原油を横断し、市場レジーム、急変リスク、Compression、レジーム転換、Cycle、地域順位を週次評価します。Exact Quantが利用できない場合も、定義済みRobust Fallbackでレポートを完成させる設計です。
 
+### 言語学習
+
+- [英会話スピーキングトレーナー — ChatGPT Project Package](prompts/language-learning/english-speaking-trainer/README.md)  
+  Speaking First、段階的ヒント、重要表現の再利用、Retrieval Practiceを重視し、必要な場面で英語を即座に口から出せる状態を目指すChatGPT Project向けパッケージです。
+
 ### 食・飲料
 
 - [ボトル・ラベルから楽しむ酒類ガイド](prompts/food-drink/bottle-label-drink-guide.md)  
@@ -36,7 +41,7 @@ ChatGPTやその他のAIツールで再利用できる、日本語中心の公�
 
 複数ファイルで構成されるProject Packageは、各パッケージの `README.md` を入口にします。
 
-`project-instructions.md` をChatGPT ProjectのProject Instructionsへ貼り、READMEで「推奨」とされている補助ファイルをProject Filesへ追加してください。
+`project-instructions.md` をChatGPT ProjectのProject Instructionsへ貼り、READMEで「必須」「推奨」とされている補助ファイルをProject Filesへ追加してください。
 
 各プロンプトには必要な機能や前提条件を記載しています。Web検索、市場データ、ファイル参照、高度計算などが必要なものは、利用環境によって結果が変わる場合があります。
 
