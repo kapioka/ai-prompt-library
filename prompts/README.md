@@ -14,6 +14,11 @@
 - [週次グローバル市場モニター](market-analysis/weekly-global-market-monitor.md)  
   世界の主要株式市場とクロスアセットを横断し、市場レジーム、急変リスク、ボラティリティ収縮、レジーム転換兆候、地域順位を週次で評価するプロンプト。
 
+### 言語学習
+
+- [英会話スピーキングトレーナー — ChatGPT Project Package](language-learning/english-speaking-trainer/README.md)  
+  答えを先に見せず、Speaking First、段階的ヒント、重要表現の再利用、Retrieval Practiceを重視して、英語を必要な場面で即座に口から出す力を鍛えるChatGPT Project向けパッケージ。
+
 ### 食・飲料
 
 - [Recipe Cooking Navigator — ChatGPT Project Package](food-drink/recipe-cooking-navigator/README.md)  
