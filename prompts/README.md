@@ -19,6 +19,11 @@
 - [英会話スピーキングトレーナー — ChatGPT Project Package](language-learning/english-speaking-trainer/README.md)  
   答えを先に見せず、Speaking First、段階的ヒント、重要表現の再利用、Retrieval Practiceを重視して、英語を必要な場面で即座に口から出す力を鍛えるChatGPT Project向けパッケージ。
 
+### 自己理解・自己再発見
+
+- [自己再発見・自己理解プロンプト集 — 12領域・48種類](self-understanding/self-rediscovery-48-prompts.md)  
+  過去、好み、価値観、強み、感情、対人関係、未来を12領域・48種類で整理。統合インタビュー、反証・行動検証、原典リンクと安全上の注意を含む公開用プロンプト集。
+
 ### 食・飲料
 
 - [Recipe Cooking Navigator — ChatGPT Project Package](food-drink/recipe-cooking-navigator/README.md)  
