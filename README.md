@@ -21,6 +21,11 @@ ChatGPTやその他のAIツールで再利用できる、日本語中心の公�
 - [英会話スピーキングトレーナー — ChatGPT Project Package](prompts/language-learning/english-speaking-trainer/README.md)  
   Speaking First、段階的ヒント、重要表現の再利用、Retrieval Practiceを重視し、必要な場面で英語を即座に口から出せる状態を目指すChatGPT Project向けパッケージです。
 
+### 自己理解・自己再発見
+
+- [自己再発見・自己理解プロンプト集 — 12領域・48種類](prompts/self-understanding/self-rediscovery-48-prompts.md)  
+  自分の価値観や好み、人生の転機を対話で整理する48種類のプロンプト。研究由来の手法との関係、統合プロンプト、検証方法と注意事項を収録。
+
 ### 食・飲料
 
 - [ボトル・ラベルから楽しむ酒類ガイド](prompts/food-drink/bottle-label-drink-guide.md)  
