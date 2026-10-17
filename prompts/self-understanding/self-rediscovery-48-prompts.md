@@ -3,7 +3,7 @@ title: "自己再発見・自己理解プロンプト集 — 12領域・48種類
 slug: "self-rediscovery-48-prompts"
 category: "self-understanding"
 language: "ja"
-status: "review"
+status: "stable"
 version: "1.0.0"
 last_updated: "2026-10-18"
 ---
@@ -268,7 +268,7 @@ Best Possible SelfやLife Designなどに関連する、価値観を未来の生
 1. [Northwestern University — Dan McAdams: Life Story Interviewの概要](https://www.northwestern.edu/magazine/winter2005/feature/redemption/sidebar1.html) — A：人生の章、転機、物語。
 2. [Association for Contextual Behavioral Science — ACT Values Exercises](https://contextualscience.org/values_exercises) — C：価値観の明確化。掲載ワークは全てが公式承認されたものではありません。
 3. [Self-Determination Theory — Theory](https://selfdeterminationtheory.org/theory/) — D：自律性、有能感、関係性と動機づけ。
-4. [VIA Institute — The 24 Character Strengths](https://www.viacharacter.org/character-strengths) — E：性格的強みの分類。AIによる印象評価と正式な質問票は異なります。
+4. [VIA Institute — The 24 Character Strengths](https://www.viacharacter.org/character-strengths-via) — E：性格的強みの分類。AIによる印象評価と正式な質問票は異なります。
 5. [NHS — Thought Record](https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/self-help-cbt-techniques/thought-record/) — G：思考と感情、支持証拠と反証の整理。
 6. [Stanford Life Design Lab — Resources / Odyssey Planning](https://lifedesignlab.stanford.edu/resources-1) — I：複数の代替的な未来の探索。
 7. [UC Berkeley Greater Good in Action — Best Possible Self](https://ggia.berkeley.edu/practice/best_possible_self) — J：望ましい未来の具体化。
@@ -278,4 +278,4 @@ Best Possible SelfやLife Designなどに関連する、価値観を未来の生
 
 ## 更新履歴
 
-- v1.0.0（2026-10-18）— 12領域48種類、統合プロンプト、使い分け、3段階の実践、出典・限界を初版として公開準備。
+- v1.0.0（2026-10-18）— 12領域48種類、統合プロンプト、使い分け、3段階の実践、出典・限界を初版として公開。
