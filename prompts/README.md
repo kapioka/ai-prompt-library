@@ -24,6 +24,9 @@
 - [自己再発見・自己理解プロンプト集 — 12領域・48種類](self-understanding/self-rediscovery-48-prompts.md)  
   過去、好み、価値観、強み、感情、対人関係、未来を12領域・48種類で整理。統合インタビュー、反証・行動検証、原典リンクと安全上の注意を含む公開用プロンプト集。
 
+- [自己理解レーダープロファイル — 8軸・48問・Instagram画像生成](self-understanding/self-understanding-8-axis-48q-instagram-profile.md)  
+  48問の4択と逆転項目・正規化で8軸を整理し、追加質問による個別分析と、女性誌風のInstagram用ペライチ画像を生成するChatGPT向けプロンプト。
+
 ### 食・飲料
 
 - [Recipe Cooking Navigator — ChatGPT Project Package](food-drink/recipe-cooking-navigator/README.md)  
