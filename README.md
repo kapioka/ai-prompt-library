@@ -26,6 +26,9 @@ ChatGPTやその他のAIツールで再利用できる、日本語中心の公�
 - [自己再発見・自己理解プロンプト集 — 12領域・48種類](prompts/self-understanding/self-rediscovery-48-prompts.md)  
   自分の価値観や好み、人生の転機を対話で整理する48種類のプロンプト。研究由来の手法との関係、統合プロンプト、検証方法と注意事項を収録。
 
+- [自己理解レーダープロファイル — 8軸・48問・Instagram画像生成](prompts/self-understanding/self-understanding-8-axis-48q-instagram-profile.md)  
+  8軸の自己回答チェックを起点に、追加質問・個別分析と、女性誌風のInstagram投稿画像まで制作するChatGPT用プロンプト。
+
 ### 食・飲料
 
 - [ボトル・ラベルから楽しむ酒類ガイド](prompts/food-drink/bottle-label-drink-guide.md)  
