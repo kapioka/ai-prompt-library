@@ -118,59 +118,59 @@
       "return1wRank",
       "return1mRank",
       "return3mRank"
-    ],
-    "fallbackScore": {
-      "weights": {
-        "trend": 35,
-        "cycle": 20,
-        "relative": 20,
-        "macro": 25
-      },
-      "trendParts": {
-        "return1mRank": 25,
-        "return3mRank": 35,
-        "return6mRank": 25,
-        "rangePosition52w": 15
-      },
-      "trendMissing": "欠けた要素を除いて重みを再正規化。全欠測なら null。",
-      "cyclePoints": {
-        "上昇初期": 100,
-        "上昇後期": 75,
-        "転換中": 50,
-        "下落初期": 25,
-        "下落後期": 0
-      },
-      "cycleAcceleration": "a = m - q / 3（mとqは%表示の1か月・3か月変化率、aはpercentage point）",
-      "cycleRules": [
-        {
-          "when": "(m > 0 && q <= 0) || a > 1",
-          "phase": "上昇初期"
-        },
-        {
-          "when": "(m < 0 && q >= 0) || a < -1",
-          "phase": "下落初期"
-        },
-        {
-          "when": "m > 0 && q > 0",
-          "phase": "上昇後期"
-        },
-        {
-          "when": "m < 0 && q < 0",
-          "phase": "下落後期"
-        },
-        {
-          "when": "otherwise",
-          "phase": "転換中"
-        }
-      ],
-      "cycleRuleOrder": "上から最初に成立する規則を使用。必要入力欠測は null。",
-      "relativeParts": [
-        "return1wRank",
-        "return1mRank",
-        "return3mRank"
-      ],
-      "macro": "厳密と同じ5項目・地域別重み"
-    }
+    ]
   },
-  "version": "template-1"
+  "fallbackScore": {
+    "weights": {
+      "trend": 35,
+      "cycle": 20,
+      "relative": 20,
+      "macro": 25
+    },
+    "trendParts": {
+      "return1mRank": 25,
+      "return3mRank": 35,
+      "return6mRank": 25,
+      "rangePosition52w": 15
+    },
+    "trendMissing": "欠けた要素を除いて重みを再正規化。全欠測なら null。",
+    "cyclePoints": {
+      "上昇初期": 100,
+      "上昇後期": 75,
+      "転換中": 50,
+      "下落初期": 25,
+      "下落後期": 0
+    },
+    "cycleAcceleration": "a = m - q / 3（mとqは%表示の1か月・3か月変化率、aはpercentage point）",
+    "cycleRules": [
+      {
+        "when": "(m > 0 && q <= 0) || a > 1",
+        "phase": "上昇初期"
+      },
+      {
+        "when": "(m < 0 && q >= 0) || a < -1",
+        "phase": "下落初期"
+      },
+      {
+        "when": "m > 0 && q > 0",
+        "phase": "上昇後期"
+      },
+      {
+        "when": "m < 0 && q < 0",
+        "phase": "下落後期"
+      },
+      {
+        "when": "otherwise",
+        "phase": "転換中"
+      }
+    ],
+    "cycleRuleOrder": "上から最初に成立する規則を使用。必要入力欠測は null。",
+    "relativeParts": [
+      "return1wRank",
+      "return1mRank",
+      "return3mRank"
+    ],
+    "macro": "厳密と同じ5項目・地域別重み"
+  },
+  "version": "template-2"
 }

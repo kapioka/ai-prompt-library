@@ -85,6 +85,8 @@
 
 ### 週次採点の詳細定義
 
+**週次契約の構造（`template-2`）：** `contracts/weekly.template.json` の `strictScore` と `fallbackScore` は同じ階層に置く。順位点とマクロの共通定義は引き続き `strictScore.rankPoints`、`strictScore.macroItems`、`strictScore.macroEvaluation`、`strictScore.macroWeightsByRegion` を厳密・代替の両方式から参照する。旧 `template-1` から移行する場合は `strictScore.fallbackScore` をルートの `fallbackScore` に移し、契約版を `template-2` に更新する。採点式・重み・分類条件・判定版は変更しない。
+
 **順位点（4地域共通）：** 4地域の値を横断で順位化した 0〜100 点。点 = 100 ×（自分より小さい値の個数 +（同値の個数 − 1）÷ 2）÷ 3。同値には平均順位点を与える。4地域のうち1つでも欠測なら、その指標の順位点は全地域 null。
 
 **厳密採点の内訳（合計100）：**
