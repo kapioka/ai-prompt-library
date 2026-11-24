@@ -1,0 +1,107 @@
+{
+  "funds": [
+    {
+      "code": "EXAMPLE-A",
+      "id": "fund-a",
+      "name": "架空ファンドA（国内株式・広範囲型）",
+      "navHistoryDays": 30,
+      "navSource": {
+        "fallback": "公表NAVを転載する証券会社のファンド詳細ページ",
+        "primary": "運用会社の公式ファンドページ"
+      },
+      "stages": [
+        {
+          "amount": 12000,
+          "id": "fund-a-3",
+          "label": "第1段階 -3%",
+          "rules": [
+            {
+              "pct": 3,
+              "type": "drawdown_from_high",
+              "windowDays": 30
+            }
+          ]
+        },
+        {
+          "amount": 18000,
+          "id": "fund-a-7",
+          "label": "第2段階 -7%",
+          "rules": [
+            {
+              "pct": 7,
+              "type": "drawdown_from_high",
+              "windowDays": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EXAMPLE-B",
+      "id": "fund-b",
+      "name": "架空ファンドB（複合資産型）",
+      "navHistoryDays": 25,
+      "navSource": {
+        "fallback": null,
+        "primary": "運用会社の公式ファンドページ"
+      },
+      "stages": [
+        {
+          "amount": 22000,
+          "id": "fund-b-1",
+          "label": "例示段階",
+          "rules": [
+            {
+              "contractNav": 8000,
+              "pct": 7,
+              "type": "nav_below_contract_pct"
+            },
+            {
+              "assetLabel": "国内債券",
+              "pct": 55,
+              "type": "report_ratio_at_least"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "EXAMPLE-C",
+      "id": "fund-c",
+      "name": "架空ファンドC（外国債券型）",
+      "navHistoryDays": 45,
+      "navSource": {
+        "fallback": null,
+        "primary": "運用会社の公式ファンドページ"
+      },
+      "stages": [
+        {
+          "amount": null,
+          "id": "fund-c-9",
+          "label": "例示段階 -9%＋下げ止まり",
+          "rules": [
+            {
+              "pct": 9,
+              "stableDays": 4,
+              "type": "drawdown_then_stabilize",
+              "windowDays": 35
+            },
+            {
+              "reversalDays": 3,
+              "reversalPct": 2.2,
+              "series": "USDJPY",
+              "threshold": 135,
+              "type": "fx_at_or_below"
+            },
+            {
+              "allowCaution": false,
+              "type": "market_stress_not_worse"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "note": "すべて独立した架空の記入例です。名称・コード・金額・約定NAV・閾値・条件の組み合わせは説明用で、実際の保有・取引・個人の運用方針を示しません。推奨値や初期運用設定ではありません。EXAMPLE-* は取得対象にしないでください。利用者が実際の監視対象と条件を確認して登録するまでは、監視設定を空にしてください。",
+  "version": "funds-1"
+}
