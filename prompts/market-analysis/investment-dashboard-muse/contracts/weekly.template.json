@@ -1,1 +1,176 @@
-{"analysisVersion":"<判定版を固定する>","instructions":["週次は利用者の保有・取引・投資方針を入力にしない","まず無書込プレビューで計算し、強い警報がある場合だけ該当系列・方向の過去事例を最大2件追加する","保存後に別途照会して analysis と comparison の有無も確認する","前週比較は版・方式・系列・入力範囲が一致する場合だけ行い、比較不能をゼロ差表示しない"],"kind":"weekly","series":[{"displayId":"SPX","id":"SPY"},{"displayId":"SX5E","id":"FEZ"},{"displayId":"TOPIX","id":"1306.T"},{"displayId":"MSCI-EM","id":"EEM"},{"displayId":"VIX","id":"VIX"},{"displayId":"US10Y","id":"US10Y"},{"displayId":"DXY","fallback":"UUP（使う場合は明記）","id":"DXY"},{"displayId":"HYG","id":"HYG"},{"displayId":"XAUUSD","id":"GLD"},{"displayId":"WTI","id":"USO"}],"strictScore":{"phasePoints":{"ピーク":50,"ピーク接近":60,"上昇初期":100,"上昇後期":75,"下落初期":25,"下落後期":0,"底打ち圏":50,"底打ち接近":35},"version":"strict-1","weights":{"directedStrength":15,"macro":15,"phase":25,"relative":15,"trend":30}},"version":"template-1"}
+{
+  "analysisVersion": "<判定版を固定する>",
+  "instructions": [
+    "週次は利用者の保有・取引・投資方針を入力にしない",
+    "まず無書込プレビューで計算し、強い警報がある場合だけ該当系列・方向の過去事例を最大2件追加する",
+    "保存後に別途照会して analysis と comparison の有無も確認する",
+    "前週比較は版・方式・系列・入力範囲が一致する場合だけ行い、比較不能をゼロ差表示しない"
+  ],
+  "kind": "weekly",
+  "series": [
+    {
+      "displayId": "SPX",
+      "id": "SPY"
+    },
+    {
+      "displayId": "SX5E",
+      "id": "FEZ"
+    },
+    {
+      "displayId": "TOPIX",
+      "id": "1306.T"
+    },
+    {
+      "displayId": "MSCI-EM",
+      "id": "EEM"
+    },
+    {
+      "displayId": "VIX",
+      "id": "VIX"
+    },
+    {
+      "displayId": "US10Y",
+      "id": "US10Y"
+    },
+    {
+      "displayId": "DXY",
+      "fallback": "UUP（使う場合は明記）",
+      "id": "DXY"
+    },
+    {
+      "displayId": "HYG",
+      "id": "HYG"
+    },
+    {
+      "displayId": "XAUUSD",
+      "id": "GLD"
+    },
+    {
+      "displayId": "WTI",
+      "id": "USO"
+    }
+  ],
+  "strictScore": {
+    "phasePoints": {
+      "ピーク": 50,
+      "ピーク接近": 60,
+      "上昇初期": 100,
+      "上昇後期": 75,
+      "下落初期": 25,
+      "下落後期": 0,
+      "底打ち圏": 50,
+      "底打ち接近": 35
+    },
+    "version": "strict-1",
+    "weights": {
+      "directedStrength": 15,
+      "macro": 15,
+      "phase": 25,
+      "relative": 15,
+      "trend": 30
+    },
+    "rankPoints": "100 × (自分より小さい値の個数 + (同値の個数 - 1) / 2) / 3。欠測が1地域でもあれば全地域 null",
+    "directedStrengthFormula": "50 - 振幅の52週パーセンタイル × sin(Hilbert位相角) / 2",
+    "directedStrengthAngle": "位相角が度なら sin の入力は角度 × π / 180。振幅パーセンタイルは0〜100。",
+    "macroItems": [
+      "VIX",
+      "HYG",
+      "US10Y",
+      "DXY",
+      "USO"
+    ],
+    "macroEvaluation": "各項目を根拠付きで100/50/0に評価。5項目すべてに数値と根拠が揃わなければマクロは null。DXYの許可された代替はUUP。",
+    "macroWeightsByRegion": {
+      "US": [
+        30,
+        30,
+        25,
+        10,
+        5
+      ],
+      "EU": [
+        25,
+        30,
+        20,
+        10,
+        15
+      ],
+      "JP": [
+        25,
+        25,
+        15,
+        20,
+        15
+      ],
+      "EM": [
+        25,
+        25,
+        20,
+        25,
+        5
+      ]
+    },
+    "trendParts": {
+      "ema20wDeviationRank": 50,
+      "ema20wChange4wRank": 50
+    },
+    "relativeParts": [
+      "return1wRank",
+      "return1mRank",
+      "return3mRank"
+    ],
+    "fallbackScore": {
+      "weights": {
+        "trend": 35,
+        "cycle": 20,
+        "relative": 20,
+        "macro": 25
+      },
+      "trendParts": {
+        "return1mRank": 25,
+        "return3mRank": 35,
+        "return6mRank": 25,
+        "rangePosition52w": 15
+      },
+      "trendMissing": "欠けた要素を除いて重みを再正規化。全欠測なら null。",
+      "cyclePoints": {
+        "上昇初期": 100,
+        "上昇後期": 75,
+        "転換中": 50,
+        "下落初期": 25,
+        "下落後期": 0
+      },
+      "cycleAcceleration": "a = m - q / 3（mとqは%表示の1か月・3か月変化率、aはpercentage point）",
+      "cycleRules": [
+        {
+          "when": "(m > 0 && q <= 0) || a > 1",
+          "phase": "上昇初期"
+        },
+        {
+          "when": "(m < 0 && q >= 0) || a < -1",
+          "phase": "下落初期"
+        },
+        {
+          "when": "m > 0 && q > 0",
+          "phase": "上昇後期"
+        },
+        {
+          "when": "m < 0 && q < 0",
+          "phase": "下落後期"
+        },
+        {
+          "when": "otherwise",
+          "phase": "転換中"
+        }
+      ],
+      "cycleRuleOrder": "上から最初に成立する規則を使用。必要入力欠測は null。",
+      "relativeParts": [
+        "return1wRank",
+        "return1mRank",
+        "return3mRank"
+      ],
+      "macro": "厳密と同じ5項目・地域別重み"
+    }
+  },
+  "version": "template-1"
+}
