@@ -13,6 +13,8 @@
 
 - [週次グローバル市場モニター](market-analysis/weekly-global-market-monitor.md)  
   世界の主要株式市場とクロスアセットを横断し、市場レジーム、急変リスク、ボラティリティ収縮、レジーム転換兆候、地域順位を週次で評価するプロンプト。
+- [投資統合ダッシュボード — Muse移植キット](market-analysis/investment-dashboard-muse/README.md)  
+  PC／Python向け週次グローバル市場モニターの発展版。週次市場分析＋日次の買い増し条件チェック＋永続ダッシュボードをMuseで実装する仕様キット。
 
 ### 言語学習
 

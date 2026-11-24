@@ -15,6 +15,8 @@ ChatGPTやその他のAIツールで再利用できる、日本語中心の公�
 
 - [週次グローバル市場モニター](prompts/market-analysis/weekly-global-market-monitor.md)  
   世界の主要株式4地域とVIX、米10年金利、DXY、HYG、金、原油を横断し、市場レジーム、急変リスク、Compression、レジーム転換、Cycle、地域順位を週次評価します。Exact Quantが利用できない場合も、定義済みRobust Fallbackでレポートを完成させる設計です。
+- [投資統合ダッシュボード — Muse移植キット](prompts/market-analysis/investment-dashboard-muse/README.md)  
+  PC／Python向け週次グローバル市場モニターの発展版。週次市場分析に日次の投資信託買い増し条件チェック、永続ダッシュボード、定期ジョブを統合するMuse向け仕様キット。監視ファンドは利用者が登録します。
 
 ### 言語学習
 
