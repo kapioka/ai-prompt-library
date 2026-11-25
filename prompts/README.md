@@ -39,7 +39,7 @@
 
 ### ゲーム・ゲーミングツール
 
-- [Apex マップローテーション — Muse公開仕様キット](gaming/apex-map-rotation-tracker/README.md)  
+- [Apex ダッシュボード — Muse公開仕様キット](gaming/apex-dashboard/README.md)  
   Museを使い、Apex Legendsの現在・次のマップ、残り時間、ミックステープのモード種別、お気に入り通知、公式アップデートをゲーム外で手軽に確認するための非公式ファンメイドツールの仕様・再実装キットです。リポジトリ共通のCC0 1.0 Universalを適用します。
 
 ## 追加ルール

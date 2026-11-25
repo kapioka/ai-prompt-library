@@ -1,4 +1,4 @@
-# Apex マップローテーション — 公開用プロジェクト資料
+# Apex ダッシュボード — 公開用プロジェクト資料
 
 Muse を使って、Apex Legends のマップローテーション（現在のマップ・残り時間・次のマップ）や公式アップデート情報を、ゲームを起動せずに手軽に確認できるものを目指して作った小さな Web アプリです。
 Muse のスペース（個人用アプリ基盤）上で動作するアプリの仕様・設計・データ取得方法を、誰でも再実装できる形で公開用にまとめた資料セットです。
@@ -22,9 +22,9 @@ Muse のスペース（個人用アプリ基盤）上で動作するアプリの
 
 ## Muse での使い方
 
-1. このフォルダ一式を取得します。GitHub の Code → Download ZIP でリポジトリ全体を取得し、`prompts/gaming/apex-map-rotation-tracker/` だけを取り出しても構いません。
-2. フォルダ構成を保ったまま資料一式を ZIP にまとめ、自分の Muse に添付します。
-3. [PROMPT_FOR_MUSE.md](PROMPT_FOR_MUSE.md) の指示文を Muse に渡し、利用中の環境でフルスタック・スペース、永続保存、サーバーアクション、定期ジョブ、チャット通知が利用できるか確認します。
+1. この公開フォルダのURL（https://github.com/kapioka/ai-prompt-library/tree/main/prompts/gaming/apex-dashboard）を Muse に渡し、「README.md、PROMPT_FOR_MUSE.md、docs/ 一式を読み、Apex ダッシュボードを自分用に構築して」と依頼します。
+2. Muse がURLから全資料を読み取れない場合は、GitHub の Code → Download ZIP でリポジトリ全体を取得し、`prompts/gaming/apex-dashboard/` だけを取り出します。フォルダ構成を保ったままZIPにまとめて Muse に添付してください。
+3. [PROMPT_FOR_MUSE.md](PROMPT_FOR_MUSE.md) の指示文に従い、利用中の環境でフルスタック・スペース、永続保存、サーバーアクション、定期ジョブ、チャット通知が利用できるか確認します。
 4. Muse に自分用のスペースを構築してもらい、画面、取得・保存、カウントダウン、お気に入り、公式ニュースの表示を確認します。
 5. 実データ取得と保存・読み戻しの検証後、利用者の承認を得て15分間隔の定期ジョブを登録します。お気に入り通知は既定OFFとし、必要な場合だけ利用者が有効化します。
 
@@ -45,6 +45,6 @@ Muse のスペース（個人用アプリ基盤）上で動作するアプリの
 ## ライセンス方針
 
 - 本プロジェクトが権利を有する文章・仕様は、リポジトリ共通の CC0 1.0 Universal の下で公開します（`LICENSE` 参照）。コピー・改変・再配布・商用利用が可能で、クレジット表記は任意です。第三者の著作物・商標・データには適用されません
-- 制作：apex-map-rotation-tracker contributors（クレジット表記は任意）
+- 制作：apex-dashboard contributors（クレジット表記は任意）
 - ゲーム名・マップ名等の商標は各権利者に帰属します（`NOTICE.md` 参照）
 - データの取得元（apexdb.gg / Apex Legends Status）の利用条件は各提供元の規約に従ってください
